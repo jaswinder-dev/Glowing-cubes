@@ -1,0 +1,343 @@
+/*importing animations and effects*/
+@import 'effects.css';
+
+/*colours used*/
+:root{
+    --cube1: #46A094;
+    --cube2: #6BBD99;
+    --cube3: #AECFA4;
+    --cube4: #3B7197;
+    --cube5: #4A8DB7;
+    --cube6: #74BDE0;
+    --cube7: #326789;
+    --cube8: #78A6CB;
+    --cube9: #E9EEF2;
+    --cube10: #029FA9;
+    --cube11: #12ADC1;
+    --cube12: #244D61;
+    --cube13: #5689C0;
+    --cube14: #75E2FF;
+    --cube15: #41436A;
+    --cube16: #974063;
+    --cube17: #F54768;
+    --cube18: #2E424D;
+    --cube19: #5B8291;
+    --cube20: #98DAD9;
+    --cube21: #76C89C;
+    --cube22: #52B69A;
+    --cube23: #34A0A4;
+    --cube24: #CB997E;
+    --cube25: #DDBEA9;
+    --cube26: #FFE8D6;
+    --cube27: #B7B7A4;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 2000px;
+    background-color: #252525;
+}
+
+.wrapper{
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1/1;
+    transform-style: preserve-3d;
+    animation: rotate 10s linear infinite;
+}
+
+.wrapper:hover{
+    animation-play-state: paused;
+}
+
+.wrapper .cube{
+    position: absolute;
+    width: 90px;
+    aspect-ratio: 1/1;
+    transform-style: preserve-3d;
+    margin: 10px;
+}
+
+.wrapper .cube .side{
+    position: inherit;
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+/* targetting different sides */
+
+/* 'front' does not need any transformation */
+
+.side.top{
+    transform-origin: top center;
+    transform: rotateX(90deg) translateY(-100%);
+}
+
+.side.bottom{
+    transform-origin: bottom center;
+    transform: rotateX(-90deg) translateY(100%);
+}
+
+.side.right{
+    transform-origin: right center;
+    transform: rotateY(90deg) translateX(100%);
+}
+
+.side.left{
+    transform-origin: left center;
+    transform: rotateY(-90deg) translateX(-100%);
+}
+
+.side.rear{
+    transform: translateZ(-90deg);
+} 
+
+/* positioning different cubes */
+/* '.cube1' does not need any repositioning */
+
+.wrapper .cube2{
+    transform: translate3d(0, 0, 110px);
+}
+
+.wrapper .cube3{
+    transform: translate3d(0, 0, -110px);
+}
+
+.wrapper .cube4{
+    transform: translate3d(0, 110px, 110px);
+}
+
+.wrapper .cube5{
+    transform: translate3d(0, 110px, 0);
+}
+
+.wrapper .cube6{
+    transform: translate3d(0, 110px, -110px);
+}
+
+.wrapper .cube7{
+    transform: translate3d(0, 220px, 110px);
+}
+
+.wrapper .cube8{
+    transform: translate3d(0, 220px, 0);
+}
+
+.wrapper .cube9{
+    transform: translate3d(0, 220px, -110px);
+}
+
+.wrapper .cube10{
+    transform: translate3d(110px, 0, -110px);
+}
+
+.wrapper .cube11{
+    transform: translate3d(110px, 0, 0);
+}
+
+.wrapper .cube12{
+    transform: translate3d(110px, 0, 110px);
+}
+
+.wrapper .cube13{
+    transform: translate3d(110px, 110px, -110px);
+}
+
+.wrapper .cube14{
+    transform: translate3d(110px, 110px, 0);
+}
+
+.wrapper .cube15{
+    transform: translate3d(110px, 110px, 110px);
+}
+
+.wrapper .cube16{
+    transform: translate3d(110px, 220px, -110px);
+}
+
+.wrapper .cube17{
+    transform: translate3d(110px, 220px, 0);
+}
+
+.wrapper .cube18{
+    transform: translate3d(110px, 220px, 110px);
+}
+
+.wrapper .cube19{
+    transform: translate3d(220px, 0, -110px);
+}
+
+.wrapper .cube20{
+    transform: translate3d(220px, 0, -0);
+}
+
+.wrapper .cube21{
+    transform: translate3d(220px, 0, 110px);
+}
+
+.wrapper .cube22{
+    transform: translate3d(220px, 110px, -110px);
+}
+
+.wrapper .cube23{
+    transform: translate3d(220px, 110px, -0);
+}
+
+.wrapper .cube24{
+    transform: translate3d(220px, 110px, 110px);
+}
+
+.wrapper .cube25{
+    transform: translate3d(220px, 220px, -110px);
+}
+
+.wrapper .cube26{
+    transform: translate3d(220px, 220px, -0);
+}
+
+.wrapper .cube27{
+    transform: translate3d(220px, 220px, 110px);
+}
+
+/* prividing background colour to sides */
+.cube1 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube1));
+}
+
+.cube2 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube2));
+}
+
+.cube3 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube3));
+}
+
+.cube4 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube4));
+}
+
+.cube5 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube5));
+}
+
+.cube6 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube6));
+}
+
+.cube7 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube7));
+}
+
+.cube8 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube8));
+}
+
+.cube9 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube9));
+}
+.cube10 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube10));
+}
+
+.cube11 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube11));
+}
+
+.cube12 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube12));
+}
+
+.cube13 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube13));
+}
+
+.cube14 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube14));
+}
+
+.cube15 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube15));
+}
+
+.cube16 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube16));
+}
+
+.cube17 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube17));
+}
+
+.cube18 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube18));
+}
+
+.cube19 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube19));
+}
+
+.cube20 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube20));
+}
+
+.cube21 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube21));
+}
+
+.cube22 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube22));
+}
+
+.cube23 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube23));
+}
+
+.cube24 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube24));
+}
+
+.cube25 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube25));
+}
+
+.cube26 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube26));
+}
+
+.cube27 .side{
+    background-image: linear-gradient(45deg, #fff, var(--cube27));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
